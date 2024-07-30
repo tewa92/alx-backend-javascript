@@ -1,39 +1,38 @@
 module.exports = {
   env: {
-    browser: true,
-    node: true,
+    browser: false,
     es6: true,
+    jest: true,
   },
   extends: [
-    'eslint:recommended',
-    'plugin:react/recommended',
-    'plugin:node/recommended',
-    'plugin:import/errors',
-    'plugin:import/warnings',
+    'airbnb-base',
+    'plugin:jest/all',
   ],
+  globals: {
+    Atomics: 'readonly',
+    SharedArrayBuffer: 'readonly',
+  },
   parserOptions: {
-    ecmaVersion: 2021,
+    ecmaVersion: 2018,
     sourceType: 'module',
-    ecmaFeatures: {
-      jsx: true,
-    },
   },
+  plugins: ['jest'],
   rules: {
-    'constructor-super': 'error',
-    'no-use-before-define': ['error', { functions: false }],
-    'semi': ['error', 'always'],
+    'max-classes-per-file': 'off',
+    'no-underscore-dangle': 'off',
     'no-console': 'off',
-    'react/prop-types': 'off', // Example: Turn off prop-types rule for React
+    'no-shadow': 'off',
+    'no-restricted-syntax': [
+      'error',
+      'LabeledStatement',
+      'WithStatement',
+    ],
   },
-  plugins: [
-    'import',
-    'node',
-    'promise',
-    'react',
-  ],
-  settings: {
-    react: {
-      version: 'detect', // Automatically detect the react version
-    },
-  },
+  overrides:[
+    {
+      files: ['*.js'],
+      excludedFiles: 'babel.config.js',
+    }
+  ]
 };
+
