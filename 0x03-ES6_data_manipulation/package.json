@@ -6,6 +6,7 @@
   "type": "module",
   "scripts": {
     "test": "jest",
+    "full-test": "jest --coverage && eslint .",
     "dev": "nodemon 0-main.js",
     "lint": "eslint ."
   },
