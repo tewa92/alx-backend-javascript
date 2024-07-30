@@ -1,5 +1,6 @@
 /**
- * return a list of student
+ * display a list of student
+ * @returns {{id: Number, firstName: String, location: String}[]}
  */
 export default function getListStudents() {
     return [
