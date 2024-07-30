@@ -7,7 +7,7 @@
   "scripts": {
     "test": "jest",
     "full-test": "jest --coverage && eslint .",
-    "dev": "nodemon 0-main.js",
+    "dev": "nodemon",
     "lint": "eslint ."
   },
   "keywords": [],
